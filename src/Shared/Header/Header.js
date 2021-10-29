@@ -1,9 +1,12 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
+import useAuthentication from '../../hooks/useAuthentication';
 import './Header.css';
 
 const Header = () => {
+    const { allContexts } = useAuthentication();
+    const { user, logOut } = allContexts;
     return (
         <header>
             <Navbar className="nav-bg" expand="lg" sticky="top">
@@ -16,23 +19,27 @@ const Header = () => {
                         >
                             <Nav.Link className="text-black fs-5 me-4" as={HashLink} to="/home">Home</Nav.Link>
                             <Nav.Link className="text-black fs-5 me-4" as={HashLink} to="/about">About</Nav.Link>
-                            <Nav.Link className="text-black fs-5 me-4" as={HashLink} to="/services">Services</Nav.Link>
                             <Nav.Link className="text-black fs-5" as={HashLink} to="/pricing">Pricing</Nav.Link>
-
                         </Nav>
                         <Nav>
-                            <Nav.Link className="text-black px-5 fs-6 me-4 bg-warning" as={HashLink} to="/login">Login</Nav.Link>
-                            <Nav.Link className="text-white px-5 bg-danger fs-6 me-4" as={HashLink} to="/admin">Admin</Nav.Link>
+                            {
+                                user.email ?
+                                    <div className="bg-custom">
+                                        <img src={user.photoURL} alt="Profile" className="me-4" />
+                                        <button onClick={logOut} className="btn btn-danger">Logout</button>
+                                    </div>
+                                    :
+                                    <div className="d-flex">
+                                        <Nav.Link className="text-black px-5 fs-6 me-4 bg-warning" as={HashLink} to="/login">Login</Nav.Link>
+                                        <Nav.Link className="text-white px-5 bg-danger fs-6 me-4" as={HashLink} to="/admin">Admin</Nav.Link>
+                                    </div>
+                            }
 
-                            <NavDropdown title="Admin" className="text-black fs-6">
-                                <NavDropdown.Item className="text-black fs-6" as={HashLink}>L</NavDropdown.Item>
-                                <NavDropdown.Item >Logout</NavDropdown.Item>
-                            </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar >
-        </header>
+        </header >
     );
 };
 

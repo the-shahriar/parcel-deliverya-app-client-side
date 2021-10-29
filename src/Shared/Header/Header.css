@@ -1,3 +1,8 @@
 .nav-bg{
     background-color: rgb(250, 243, 235);
 }
+
+.bg-custom img{
+   border-radius: 50px;
+   height: 50px;
+}

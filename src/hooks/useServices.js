@@ -5,16 +5,20 @@ import { useState } from "react";
 const useServices = () => {
     const [services, setServices] = useState([])
 
-    const getService = () => {
-        axios.get('http://localhost:5000/services')
-            .then(result => {
-                setServices(result.data);
-            })
-    }
+    useEffect(() => {
+        const fetchData = () => {
+            axios.get('http://localhost:5000/service')
+                .then(result => {
+                    const res = result.data;
+                    if (res.length > 0) {
+                        setServices(result.data);
+                    }
+                })
+        }
+        fetchData()
+    }, [])
 
-    useEffect(() => getService(), [])
-
-    return [services, setServices];
+    return services;
 }
 
 export default useServices;

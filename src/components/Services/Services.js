@@ -1,11 +1,12 @@
 import React from 'react';
 import { BsArrowRight } from "react-icons/bs";
 import { useHistory } from 'react-router';
-import useServices from '../../hooks/useServices';
+import useAuthentication from '../../hooks/useAuthentication';
 import './Services.css';
 
 const Services = () => {
-    const [services] = useServices();
+
+    const { services } = useAuthentication();
 
     const history = useHistory();
     const handleGetService = (id) => {
@@ -25,7 +26,7 @@ const Services = () => {
                             <div key={id} className="service text-center">
                                 <img src={image} alt="" />
                                 <h4 className="fs-4 fw-bold mt-4">{title}</h4>
-                                <p className="fs-6">{description.slice(0, 90)}</p>
+                                <p className="fs-6">{description}</p>
                                 <button onClick={() => handleGetService(id)} className="btn btn-danger text-white px-4">Get Service <BsArrowRight className="ms-2" /></button>
                             </div>
                         )
