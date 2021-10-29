@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
+import './Header.css';
 
 const Header = () => {
     return (
         <>
-            <Navbar bg="light" expand="lg" sticky="top">
+            <Navbar className="nav-bg" expand="lg" sticky="top">
                 <Container>
-                    <Navbar.Brand className="text-danger fw-bold fs-3" as={HashLink} to='/home'><span className="fw-bold fs-3">Mr.</span> Mail</Navbar.Brand>
+                    <Navbar.Brand className="fw-bold fs-3 text-danger text-uppercase" as={HashLink} to='/home'><span className="fw-bold fs-3 text-black">Mr.</span> Mail</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse>
                         <Nav
@@ -20,8 +21,8 @@ const Header = () => {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link className="text-white px-5 fs-6 me-4 bg-primary" as={HashLink} to="/login">Login</Nav.Link>
-                            <Nav.Link className="text-black px-5 bg-warning fs-6 me-4" as={HashLink} to="/admin">Admin</Nav.Link>
+                            <Nav.Link className="text-black px-5 fs-6 me-4 bg-warning" as={HashLink} to="/login">Login</Nav.Link>
+                            <Nav.Link className="text-white px-5 bg-danger fs-6 me-4" as={HashLink} to="/admin">Admin</Nav.Link>
 
                             <NavDropdown title="Admin" className="text-black fs-6">
                                 <NavDropdown.Item className="text-black fs-6" as={HashLink}>L</NavDropdown.Item>

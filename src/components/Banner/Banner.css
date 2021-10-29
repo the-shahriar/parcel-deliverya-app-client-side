@@ -1,0 +1,45 @@
+.banner-area{
+    margin-bottom: 100px;
+    position: relative;
+}
+.banner{
+    background-color: rgb(250, 243, 235);
+    padding: 20px 60px 100px 60px;
+}
+
+.banner h2{
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+.banner-image img{ 
+    height: 500px;
+
+}
+
+.achievements{
+    position: absolute;
+    top: 85%;
+    left: 15%;
+}
+
+.achievement{
+    background-color: antiquewhite;
+    margin-right: 10px;
+    padding: 30px 100px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.achievement h2{
+    font-size: 20px;
+    letter-spacing: 2x;
+
+}
+
+.achievement span{
+    font-size: 30px;
+    font-weight: bold;
+}
