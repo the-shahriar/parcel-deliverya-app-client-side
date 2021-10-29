@@ -1,22 +1,17 @@
 import React from 'react';
-import { useState } from 'react';
-import axios from 'axios';
-import { useEffect } from 'react';
 import { BsArrowRight } from "react-icons/bs";
+import { useHistory } from 'react-router';
+import useServices from '../../hooks/useServices';
 import './Services.css';
 
 const Services = () => {
-    const [services, setServices] = useState([]);
+    const [services] = useServices();
 
-    const getServices = () => {
-        axios.get('http://localhost:5000/services')
-            .then(result => {
-                setServices(result.data);
-            })
+    const history = useHistory();
+    const handleGetService = (id) => {
+        const url = `/book/${id}`;
+        history.push(url)
     }
-
-    useEffect(() => getServices(), [])
-
 
     return (
         <div className="services-container">
@@ -31,7 +26,7 @@ const Services = () => {
                                 <img src={image} alt="" />
                                 <h4 className="fs-4 fw-bold mt-4">{title}</h4>
                                 <p className="fs-6">{description.slice(0, 90)}</p>
-                                <button className="btn btn-danger text-white px-4">Get Service <BsArrowRight className="ms-2" /></button>
+                                <button onClick={() => handleGetService(id)} className="btn btn-danger text-white px-4">Get Service <BsArrowRight className="ms-2" /></button>
                             </div>
                         )
                     })

@@ -1,0 +1,14 @@
+.faq{
+    margin: 100px 0;
+}
+
+.accordion{
+    margin: 0 200px;
+}
+
+.accordion-flush .accordion-item .accordion-button {
+    font-size: 22px;
+}
+.accordion-flush .accordion-item .accordion-button::before {
+    content: "-";
+}

@@ -4,6 +4,7 @@ import mobileUi from '../../assets/document.png';
 import { BsArrowRight } from "react-icons/bs";
 import './Home.css';
 import Services from '../../components/Services/Services';
+import Questions from '../../components/Questions/Questions';
 
 
 const Home = () => {
@@ -42,6 +43,9 @@ const Home = () => {
             {/* Services */}
 
             <Services></Services>
+
+            {/* FAQ */}
+            <Questions></Questions>
         </div>
     );
 };
