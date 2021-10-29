@@ -1,11 +1,41 @@
 import React from 'react';
 import Banner from '../../components/Banner/Banner';
+import mobileUi from '../../assets/document.png';
+import './Home.css';
 
 
 const Home = () => {
     return (
-        <div>
+        <div className="home">
+            {/* Banner */}
             <Banner></Banner>
+
+            {/* Mr. Mail Platform */}
+            <div className="services-container">
+                <h2 className="text-uppercase fs-2 fw-bold text-center title">The Platform</h2>
+                <hr className="mx-auto text-center" />
+                <p className="fs-5 text-center">Here’s everything <span className="fw-bold fs-4 text-danger">Mr. Mail</span> offers just for you!</p>
+                <div className="service d-flex align-items-center justify-content-center">
+                    <div className="mr-5">
+                        <div className="mb-5">
+                            <h2 className="fw-bold fs-4">On Demand Delivery</h2>
+                            <p className="fs-6">Left your charger or keys at home? Have it delivered to <br /> you on Pathao Parcel, without any hassle!</p>
+                        </div>
+                        <div className="mb-5">
+                            <h2 className="fw-bold fs-4">Trust Us</h2>
+                            <p className="fs-6">You can trust us to deliver your most confidential <br /> documents to the desired place absolutely intact right on <br /> time!</p>
+                        </div>
+                        <div className="mb-5">
+                            <h2 className="fw-bold fs-4">Emergency? Deliver via Parcel!</h2>
+                            <p className="fs-6">With Pathao Parcel, you can get your item in the quickest <br /> time. Because your emergencies are Parcel’s biggest <br /> concern!</p>
+                        </div>
+
+                    </div>
+                    <div >
+                        <img className="mobile-ui" src={mobileUi} alt="Mobile UI" />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
