@@ -5,6 +5,7 @@ import { BsArrowRight } from "react-icons/bs";
 import './Home.css';
 import Services from '../../components/Services/Services';
 import Questions from '../../components/Questions/Questions';
+import HappyClients from '../../components/HappyClients/HappyClients';
 
 
 const Home = () => {
@@ -43,6 +44,9 @@ const Home = () => {
             {/* Services */}
 
             <Services></Services>
+
+            {/* Happy Clients */}
+            <HappyClients></HappyClients>
 
             {/* FAQ */}
             <Questions></Questions>

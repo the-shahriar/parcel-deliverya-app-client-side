@@ -5,7 +5,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <>
+        <header>
             <Navbar className="nav-bg" expand="lg" sticky="top">
                 <Container>
                     <Navbar.Brand className="fw-bold fs-3 text-danger text-uppercase" as={HashLink} to='/home'><span className="fw-bold fs-3 text-black">Mr.</span> Mail</Navbar.Brand>
@@ -32,7 +32,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar >
-        </>
+        </header>
     );
 };
 
