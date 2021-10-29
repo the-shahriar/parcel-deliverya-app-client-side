@@ -10,7 +10,7 @@ const Banner = () => {
             <div className="banner d-flex align-items-center justify-content-around">
                 <div>
                     <h2>#1 Platform <br /> in the country <br /> for parcel delivery.</h2>
-                    <p className="fs-5 text-danger">We deliver your parcel with 100% care.</p>
+                    <p className="fs-6 text-danger text-uppercase fw-bold">We deliver your parcel with 100% care.</p>
                 </div>
                 <div className="banner-image">
                     <img src={banner} alt="Banner" />
