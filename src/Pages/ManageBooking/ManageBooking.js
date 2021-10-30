@@ -24,7 +24,21 @@ const ManageBooking = () => {
             })
     }, [page]);
 
-
+    const deleteBooking = (id) => {
+        const url = `http://localhost:5000/booking/${id}`;
+        const proceed = window.confirm("Are you sure?")
+        if (proceed) {
+            axios.delete(url)
+                .then(result => {
+                    const data = result.data;
+                    if (data.deletedCount) {
+                        alert('Your service has been canceled');
+                        const remaining = allBookings.filter(booking => booking._id !== id)
+                        setAllBookings(remaining);
+                    }
+                })
+        }
+    }
 
     return (
         <div className="booking-area thankYou-are">
@@ -45,13 +59,13 @@ const ManageBooking = () => {
 
                         {
                             allBookings.map(booking => {
-                                const { _id, name, email, service_id, status, cost } = booking;
+                                const { _id, name, email, serviceName, status, cost } = booking;
 
                                 return (
                                     <tr key={_id}>
                                         <td>{name}</td>
                                         <td>{email}</td>
-                                        <td>Service</td>
+                                        <td>{serviceName}</td>
                                         <td>{cost}</td>
                                         <td>
                                             <form onSubmit={handleSubmit(onSubmit)}>
@@ -63,7 +77,7 @@ const ManageBooking = () => {
                                         </td>
                                         <td>
                                             <button className="btn btn-success me-3">Update</button>
-                                            <button className="btn btn-warning">Cancel</button>
+                                            <button onClick={() => deleteBooking(_id)} className="btn btn-warning">Cancel</button>
                                         </td>
                                     </tr>
                                 )

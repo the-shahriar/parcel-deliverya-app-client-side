@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuthentication from '../../hooks/useAuthentication';
 import './ThankYou.css';
 
@@ -45,6 +46,9 @@ const ThankYou = () => {
                         </tr>
                     </tbody>
                 </Table>
+                <div className="detail-btn">
+                    <Link to="/my-booking" className="btn btn-danger px-4 ms-auto">View details</Link>
+                </div>
             </div>
         </div>
     );

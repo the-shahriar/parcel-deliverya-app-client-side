@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, } from 'react-bootstrap';
+import { Container, Dropdown, Nav, Navbar, } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import useAuthentication from '../../hooks/useAuthentication';
 import './Header.css';
@@ -25,14 +25,22 @@ const Header = () => {
                             {
                                 user.email ?
                                     <div className="bg-custom">
-                                        <img src={user.photoURL} alt="Profile" className="me-4" />
-                                        <button onClick={logOut} className="btn btn-danger">Logout</button>
+                                        <Dropdown>
+                                            <Dropdown.Toggle variant="white" id="dropdown-basic">
+                                                <img src={user.photoURL} alt="Profile" />
+                                            </Dropdown.Toggle>
+
+                                            <Dropdown.Menu>
+
+                                                <Dropdown.Item as={HashLink} to="/my-booking">My Booking</Dropdown.Item>
+                                                <Dropdown.Item as={HashLink} to="/manage-booking">Manage Booking</Dropdown.Item>
+                                                <Dropdown.Item onClick={logOut} className="btn btn-danger">Logout</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
                                     </div>
                                     :
-                                    <div className="d-flex">
-                                        <Nav.Link className="text-black px-5 fs-6 me-4 bg-warning" as={HashLink} to="/login">Login</Nav.Link>
-                                        <Nav.Link className="text-white px-5 bg-danger fs-6 me-4" as={HashLink} to="/admin">Admin</Nav.Link>
-                                    </div>
+
+                                    <Nav.Link className="text-white px-5 fs-6 me-4 bg-danger" as={HashLink} to="/login">Login</Nav.Link>
                             }
 
                         </Nav>

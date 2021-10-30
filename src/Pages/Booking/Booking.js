@@ -26,8 +26,14 @@ const Booking = () => {
     const { user } = allContexts;
 
     // react hook form
-    const { register, handleSubmit, setFocus } = useForm();
+    const { register, handleSubmit, setFocus, setValue } = useForm();
+
+    useEffect(() => {
+        setValue('serviceName', title)
+    }, [setValue, title])
+
     const onSubmit = (data, e) => {
+        // console.log(data);
         axios.post('http://localhost:5000/booking', data)
             .then(res => {
                 const result = res.data;
@@ -111,17 +117,19 @@ const Booking = () => {
 
                         <div className="form-outline mb-3">
                             <label className="form-label" htmlFor="form6Example7">Additional information</label>
+                            <input type="hidden" defaultValue={title} name="name" {...register("serviceName")} />
                             <textarea {...register("additional_info")} className="form-control" id="form6Example7" rows="3"></textarea>
                         </div>
 
                         <div className="form-outline mb-3">
                             <label className="form-label" htmlFor="form6Example7">Cost</label>
                             <input type="hidden" defaultValue={id} name="name" {...register("service_id")} />
+                            <input type="hidden" defaultValue={title} name="name" {...register("serviceName")} />
                             <input type="hidden" defaultValue="pending" name="name" {...register("status")} />
                             <input defaultValue={costPerQuantiy} {...register("cost")} type="text" id="form6Example6" className="form-control" />
                         </div>
 
-                        <input type="submit" value="Book Now" className="btn btn-danger btn-block" />
+                        <input type="submit" value="Get Service" className="btn btn-danger btn-block" />
                     </form>
                 </div>
             </div>
