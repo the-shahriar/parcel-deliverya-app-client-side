@@ -21,13 +21,13 @@ const Services = () => {
             <div className="services">
                 {
                     services.map(service => {
-                        const { id, image, title, description } = service;
+                        const { _id, image, title, description } = service;
                         return (
-                            <div key={id} className="service text-center">
+                            <div key={_id} className="service text-center">
                                 <img src={image} alt="" />
                                 <h4 className="fs-4 fw-bold mt-4">{title}</h4>
                                 <p className="fs-6">{description}</p>
-                                <button onClick={() => handleGetService(id)} className="btn btn-danger text-white px-4">Get Service <BsArrowRight className="ms-2" /></button>
+                                <button onClick={() => handleGetService(_id)} className="btn btn-danger text-white px-4">Get Service <BsArrowRight className="ms-2" /></button>
                             </div>
                         )
                     })
