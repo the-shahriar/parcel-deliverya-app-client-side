@@ -85,7 +85,7 @@ const ManageBooking = () => {
                         }
                     </tbody>
                 </Table>
-                <div className="pagination mx-auto">
+                <div className="pagination">
                     {
                         [...Array(pageCount).keys()].map(number => <button className={number === page ? 'selected btn btn-danger' : 'outline-danger'} key={number} onClick={() => setPage(number)}
                         >{number + 1}</button>)

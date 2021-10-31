@@ -31,7 +31,7 @@ const Header = () => {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-
+                                                <Dropdown.Item as={HashLink} to="/add-service">Add Service</Dropdown.Item>
                                                 <Dropdown.Item as={HashLink} to="/my-booking">My Booking</Dropdown.Item>
                                                 <Dropdown.Item as={HashLink} to="/manage-booking">Manage Booking</Dropdown.Item>
                                                 <Dropdown.Item onClick={logOut} className="btn btn-danger">Logout</Dropdown.Item>

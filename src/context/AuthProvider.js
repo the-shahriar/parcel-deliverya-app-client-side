@@ -9,10 +9,10 @@ export const AuthContext = createContext();
 const AuthProvider = (props) => {
     const { children } = props;
     const allContexts = useFirebase();
-    const services = useServices();
+    const allServices = useServices();
 
     return (
-        <AuthContext.Provider value={{ allContexts, services }} >
+        <AuthContext.Provider value={{ allContexts, allServices }} >
 
             {children}
 

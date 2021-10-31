@@ -6,9 +6,10 @@ import './Services.css';
 
 const Services = () => {
 
-    const { services } = useAuthentication();
-
+    const { allServices } = useAuthentication();
+    const services = allServices;
     const history = useHistory();
+
     const handleGetService = (id) => {
         const url = `/book/${id}`;
         history.push(url)

@@ -19,7 +19,7 @@ const ThankYou = () => {
             .then(result => {
                 setService(result.data)
             })
-    }, [])
+    }, [url])
 
     const { title, costPerQuantiy } = service;
 
@@ -47,7 +47,7 @@ const ThankYou = () => {
                     </tbody>
                 </Table>
                 <div className="detail-btn">
-                    <Link to="/my-booking" className="btn btn-danger px-4 ms-auto">View details</Link>
+                    <Link to="/my-booking" className="btn btn-danger px-4 ms-auto">View Booking</Link>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@ import './App.css';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AuthProvider from './context/AuthProvider';
 import About from './Pages/About/About';
+import AddService from './Pages/AddService/AddService';
 import Booking from './Pages/Booking/Booking';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -31,12 +32,15 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/manage-booking">
+          <Route path="/add-service">
+            <AddService></AddService>
+          </Route>
+          <PrivateRoute path="/manage-booking">
             <ManageBooking></ManageBooking>
-          </Route>
-          <Route path="/my-booking">
+          </PrivateRoute>
+          <PrivateRoute path="/my-booking">
             <MyBooking></MyBooking>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/book/:id">
             <Booking></Booking>
           </PrivateRoute>

@@ -1,0 +1,17 @@
+.add-service{
+    margin: 150px 0;
+}
+
+.right-side{
+    width: 50%;
+    background-color: rgb(240, 240, 235);
+    padding: 70px 50px;
+}
+
+.left-side {
+    margin-right: 20px;
+}
+
+.left-side img{
+    width: 100%;
+}
