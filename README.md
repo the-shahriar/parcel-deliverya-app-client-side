@@ -1,6 +1,6 @@
 #  MR. MAIL | A Delivery Platform for all
 
-[Live Webiste Link](https://react-elearning-app.netlify.app/).
+[Live Webiste Link](https://parcel-delivery-app-6a465.web.app/).
 
 <h2>What is used in this project</h2>
 

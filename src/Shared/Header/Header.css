@@ -14,3 +14,9 @@
 .show{
     border: none!important;
 }
+
+@media only screen and (max-width: 600px) {
+    button#dropdown-basic {
+        margin-left: -15px;
+    }
+}

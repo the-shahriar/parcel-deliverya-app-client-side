@@ -62,8 +62,11 @@
         top: 0%;
         left: 0%;
         flex-direction: column;
-        margin-top: 60px;
-        padding-bottom: 10px;
+       margin-top: 50px;
+    }
+
+    .achievement{
+        margin: 0 0 20px 0;
     }
     
 }
