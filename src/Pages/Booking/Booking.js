@@ -10,7 +10,7 @@ const Booking = () => {
     const [service, setService] = useState({});
     const { id } = useParams();
     const history = useHistory();
-    const url = `http://localhost:5000/service/${id}`;
+    const url = `https://ghastly-shadow-61352.herokuapp.com/service/${id}`;
 
     useEffect(() => {
         axios.get(url)
@@ -34,7 +34,7 @@ const Booking = () => {
 
     const onSubmit = (data, e) => {
         // console.log(data);
-        axios.post('http://localhost:5000/booking', data)
+        axios.post('https://ghastly-shadow-61352.herokuapp.com/booking', data)
             .then(res => {
                 const result = res.data;
                 if (result.insertedId) {

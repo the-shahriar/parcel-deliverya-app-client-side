@@ -7,7 +7,7 @@ const useServices = () => {
 
     useEffect(() => {
         const fetchData = () => {
-            axios.get('http://localhost:5000/service')
+            axios.get('https://ghastly-shadow-61352.herokuapp.com/service')
                 .then(result => {
                     const res = result.data;
                     if (res.length > 0) {

@@ -9,7 +9,7 @@ const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data) => {
-        axios.post('http://localhost:5000/service', data)
+        axios.post('https://ghastly-shadow-61352.herokuapp.com/service', data)
             .then(result => {
                 const data = result.data;
                 if (data.insertedId) {

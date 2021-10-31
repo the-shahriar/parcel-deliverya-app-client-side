@@ -9,7 +9,7 @@ const ManageBooking = () => {
     const size = 10;
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/booking?page=${page}&&size=${size}`)
+        axios.get(`https://ghastly-shadow-61352.herokuapp.com/booking?page=${page}&&size=${size}`)
             .then(result => {
                 const data = result.data;
                 setAllBookings(data.results);
@@ -21,7 +21,7 @@ const ManageBooking = () => {
     }, [page]);
 
     const deleteBooking = (id) => {
-        const url = `http://localhost:5000/booking/${id}`;
+        const url = `https://ghastly-shadow-61352.herokuapp.com/booking/${id}`;
         const proceed = window.confirm("Are you sure?")
         if (proceed) {
             axios.delete(url)
@@ -43,7 +43,7 @@ const ManageBooking = () => {
         const statusValue = statusRef.current.value;
         const updatedStatus = { status: statusValue }
 
-        axios.put(`http://localhost:5000/booking/${id}`, updatedStatus)
+        axios.put(`https://ghastly-shadow-61352.herokuapp.com/booking/${id}`, updatedStatus)
             .then(res => {
                 const result = res.data;
                 if (result.modifiedCount > 0) {

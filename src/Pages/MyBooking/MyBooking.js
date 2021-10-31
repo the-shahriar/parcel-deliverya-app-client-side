@@ -14,7 +14,7 @@ const MyBooking = () => {
 
     // fetching booking data from database
     useEffect(() => {
-        axios.get('http://localhost:5000/booking')
+        axios.get('https://ghastly-shadow-61352.herokuapp.com/booking')
             .then(res => {
                 const result = res.data;
                 const datas = result.results;
@@ -25,7 +25,7 @@ const MyBooking = () => {
 
     // delete booking
     const deleteBooking = (id) => {
-        const url = `http://localhost:5000/booking/${id}`;
+        const url = `https://ghastly-shadow-61352.herokuapp.com/booking/${id}`;
         const proceed = window.confirm("Are you sure?")
         if (proceed) {
             axios.delete(url)

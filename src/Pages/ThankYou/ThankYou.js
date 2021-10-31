@@ -13,7 +13,7 @@ const ThankYou = () => {
     const { allContexts } = useAuthentication();
     const { user } = allContexts;
 
-    const url = `http://localhost:5000/service/${id}`;
+    const url = `https://ghastly-shadow-61352.herokuapp.com/service/${id}`;
 
     useEffect(() => {
         axios.get(url)
