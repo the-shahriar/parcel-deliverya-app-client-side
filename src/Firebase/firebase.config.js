@@ -1,10 +1,12 @@
+// console.log(process.env)
 const firebaseConfig = {
-    apiKey: "AIzaSyAmnCClea89R0_YMkm664KSJrHZV97dHHY",
-    authDomain: "parcel-delivery-app-6a465.firebaseapp.com",
-    projectId: "parcel-delivery-app-6a465",
-    storageBucket: "parcel-delivery-app-6a465.appspot.com",
-    messagingSenderId: "1073485114817",
-    appId: "1:1073485114817:web:11d3abf530f44eb3775340"
+    apiKey: process.env.REACT_APP_FIREBASE_API,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
+
 };
 
 export default firebaseConfig;
