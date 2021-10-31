@@ -1,16 +1,12 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import { useForm } from "react-hook-form";
 
 const ManageBooking = () => {
     const [allBookings, setAllBookings] = useState([]);
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
     const size = 10;
-
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
 
     useEffect(() => {
         axios.get(`http://localhost:5000/booking?page=${page}&&size=${size}`)
@@ -38,7 +34,25 @@ const ManageBooking = () => {
                     }
                 })
         }
-    }
+    };
+
+    // getting the status updatedValue
+    const statusRef = useRef();
+
+    const updateBooking = (id) => {
+        const statusValue = statusRef.current.value;
+        const updatedStatus = { status: statusValue }
+
+        axios.put(`http://localhost:5000/booking/${id}`, updatedStatus)
+            .then(res => {
+                const result = res.data;
+                if (result.modifiedCount > 0) {
+                    alert("Booking status updated");
+                }
+
+            })
+    };
+
 
     return (
         <div className="booking-area thankYou-are">
@@ -68,15 +82,13 @@ const ManageBooking = () => {
                                         <td>{serviceName}</td>
                                         <td>{cost}</td>
                                         <td>
-                                            <form onSubmit={handleSubmit(onSubmit)}>
-                                                <select className="form-control" {...register("status")}>
-                                                    <option className="text-caplitalize">{status}</option>
-                                                    <option value="received">received</option>
-                                                </select>
-                                            </form>
+                                            <select className="form-control">
+                                                <option className="text-caplitalize">{status}</option>
+                                                <option ref={statusRef} value="received">received</option>
+                                            </select>
                                         </td>
                                         <td>
-                                            <button className="btn btn-success me-3">Update</button>
+                                            <button onClick={() => updateBooking(_id)} className="btn btn-success me-3">Update</button>
                                             <button onClick={() => deleteBooking(_id)} className="btn btn-warning">Cancel</button>
                                         </td>
                                     </tr>
