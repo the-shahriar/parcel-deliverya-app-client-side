@@ -32,9 +32,9 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/add-service">
+          <PrivateRoute path="/add-service">
             <AddService></AddService>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/manage-booking">
             <ManageBooking></ManageBooking>
           </PrivateRoute>

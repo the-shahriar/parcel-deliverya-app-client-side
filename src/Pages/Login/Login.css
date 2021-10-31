@@ -13,3 +13,10 @@
     padding: 4px 20px;
     background-color: white;
 }
+
+@media only screen and (max-width: 600px) {
+  .bg-image img{
+    width: 100%;
+    margin-top: 50px;
+}
+}

@@ -61,7 +61,7 @@ const Booking = () => {
                     <div>
                         <h2 className="fw-bold fs-4">{title}</h2>
                         <p className="w-75 fs-5">{description}</p>
-                        <p className="fw-bold fs-4 bg-warning px-4 py-3 w-50 text-white">Cost Per Product:
+                        <p className="fw-bold fs-5 bg-warning px-4 py-3 w-50 text-white">Cost Per Quantity:
                             ${costPerQuantiy}
                         </p>
                     </div>
@@ -133,6 +133,7 @@ const Booking = () => {
                     </form>
                 </div>
             </div>
+
         </div>
     );
 };

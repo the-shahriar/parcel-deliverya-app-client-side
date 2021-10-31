@@ -1,7 +1,7 @@
 import React from 'react';
-import { Spinner } from 'react-bootstrap';
 import { Redirect, Route } from 'react-router';
 import useAuthentication from '../../hooks/useAuthentication';
+import ShowSpinner from '../ShowSpinner/ShowSpinner';
 
 const PrivateRoute = ({ children, ...rest }) => {
 
@@ -9,7 +9,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     const { user, loading } = allContexts
 
     if (loading) {
-        return <Spinner animation="border" />
+        return <ShowSpinner></ShowSpinner>
     }
 
     return (

@@ -21,10 +21,10 @@ const About = () => {
                 <hr className="mx-auto text-center" />
                 <p className="text-center fs-5">We work everyday with values we don’t compromise.</p>
                 <div className="about mt-5 d-flex align-items-center justify-content-center">
-                    <div className="me-5">
+                    <div className=" me-lg-5">
                         <div className="mb-5">
                             <h2 className="fw-bold fs-4">Customer First.</h2>
-                            <p className="fs-5">Mr. Mail exists to serve. Everything we do impact <br /> thousands of people.</p>
+                            <p className="fs-5 text">Mr. Mail exists to serve. Everything we do impact <br /> thousands of people.</p>
                         </div>
                         <div className="mb-5">
                             <h2 className="fw-bold fs-4">One Platform.</h2>

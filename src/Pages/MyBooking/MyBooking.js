@@ -41,11 +41,11 @@ const MyBooking = () => {
     }
 
     return (
-        <div className="thankYou-are">
+        <div className="thankYou-are mb-5">
             <div className="container">
                 <h2 className="fw-bold fs-4 mb-5">Welcome, <span className="text-danger">{user.displayName}</span>!</h2>
                 <h3 className="fw-bold fs-5 text-uppercase mb-5">Your Booking</h3>
-                <Table hover>
+                <Table responsive="md" hover>
                     <thead>
                         <tr>
                             <th>Email</th>

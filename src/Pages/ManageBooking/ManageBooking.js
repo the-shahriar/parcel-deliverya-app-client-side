@@ -55,10 +55,10 @@ const ManageBooking = () => {
 
 
     return (
-        <div className="booking-area thankYou-are">
+        <div className="booking-area thankYou-are mb-5">
             <div className="container">
                 <h2 className="fw-bold text-uppercase mb-5 text-center">Booked Services</h2>
-                <Table striped bordered hover>
+                <Table responsive="md" striped bordered hover>
                     <thead>
                         <tr>
                             <th>Name</th>

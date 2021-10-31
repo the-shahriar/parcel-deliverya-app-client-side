@@ -21,3 +21,10 @@
     width: 200px;
     
 }
+
+@media only screen and (max-width: 600px) {
+    .services{
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0;
+    }
+}

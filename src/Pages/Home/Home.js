@@ -20,7 +20,7 @@ const Home = () => {
                 <hr className="mx-auto text-center" />
                 <p className="fs-5 text-center">Here’s everything <span className="fw-bold fs-4 text-danger">Mr. Mail</span> provides just for you!</p>
                 <div className="about d-flex align-items-center justify-content-center">
-                    <div className="mr-5">
+                    <div className="mr-lg-5">
                         <div className="mb-5">
                             <h2 className="fw-bold fs-4">On Demand Delivery</h2>
                             <p className="fs-6">Left your charger or keys at home? Have it delivered to <br /> you on Pathao Parcel, without any hassle!</p>

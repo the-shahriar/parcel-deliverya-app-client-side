@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import HappyClients from '../../components/HappyClients/HappyClients';
 import useAuthentication from '../../hooks/useAuthentication';
 import './ThankYou.css';
 
@@ -28,7 +29,7 @@ const ThankYou = () => {
             <div className="container">
                 <h4 className="text-danger nav-bg my-4 py-4 px-3 w-50">Thank you for booked our service.</h4>
                 <h5>Booking details</h5>
-                <Table striped bordered hover>
+                <Table responsive striped bordered hover>
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -50,6 +51,9 @@ const ThankYou = () => {
                     <Link to="/my-booking" className="btn btn-danger px-4 ms-auto">View Booking</Link>
                 </div>
             </div>
+
+            {/* Happy cilents area */}
+            <HappyClients></HappyClients>
         </div>
     );
 };

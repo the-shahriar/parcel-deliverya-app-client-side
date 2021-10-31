@@ -1,4 +1,12 @@
-
 .area{
     margin-top: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    .area{
+        margin: 50px 0;
+    }
+    .area img{
+        width: 100%;
+    }
 }

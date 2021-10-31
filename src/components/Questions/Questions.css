@@ -12,3 +12,9 @@
 .accordion-flush .accordion-item .accordion-button::before {
     content: "-";
 }
+
+@media only screen and (max-width: 600px) {
+    .accordion{
+        margin: 0;
+    }
+}

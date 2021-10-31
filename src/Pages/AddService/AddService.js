@@ -22,7 +22,7 @@ const AddService = () => {
     return (
         <div className="container">
             <div className="add-service">
-                <div className="d-flex align-items-center justify-content-around">
+                <div className="d-flex align-items-center justify-content-around addService">
                     <div className="left-side">
                         <img src={image} alt="Service img" />
                     </div>

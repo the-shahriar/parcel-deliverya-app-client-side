@@ -14,3 +14,13 @@
     width: 90%;
     height: 300px;
 }
+
+@media only screen and (max-width: 600px) {
+    .happyClients{
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px;
+    }
+    .happyClients img{
+        width: 100%;
+    }
+}
