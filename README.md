@@ -3,7 +3,11 @@
 [Live Webiste Link](https://react-elearning-app.netlify.app/).
 
 <h2>What is used in this project</h2>
+
+
 <!-- Client Side -->
+<h4>Client side</h4>
+
  <li>React</li>
  <li>React Router</li>
  <li>Private Route</li>
@@ -16,7 +20,8 @@
  <li>Firebase</li>
  <li>Axios</li>
 
- <!-- Server side -->
+<h4>Server Side</h4>
+
  <li>Node
  <li>Express
  <li>MongoDB
